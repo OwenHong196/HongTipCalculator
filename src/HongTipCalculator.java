@@ -1,8 +1,10 @@
+package src;
+
 import java.util.Scanner;
 public class HongTipCalculator {
     public static void main(String[] args){
-        double num = 0;
         Scanner scan = new Scanner(System.in);
+        String newItem = "";
         System.out.print("Welcome Summoner!");
         System.out.print("How many people are in your group: ");
         int numPeople = scan.nextInt();
@@ -10,14 +12,19 @@ public class HongTipCalculator {
         int tipPercentage = scan.nextInt();
         System.out.print("Enter a cost in dollars and cents (-1 to end): ");
         double bill = scan.nextDouble();
+        scan.nextLine();
         System.out.print("Enter the item: ");
         String item = scan.nextLine();
+        double num = bill;
         while (num != -1.0){
             System.out.print("Enter a cost in dollars and cents (-1 to end): ");
             num = scan.nextDouble();
+            scan.nextLine();
             bill = bill + num;
-            System.out.print("Enter the item: ");
-            item = (item + "\n" + (scan.nextLine()));
+            if (num != -1){
+                System.out.print("Enter the item: ");
+                item = (item + "\n" + (scan.nextLine()));
+            }
         }
         bill ++;
         double total = bill * tipPercentage / 100 + bill;
