@@ -16,7 +16,7 @@ public class HongTipCalculator {
             System.out.print("Enter a cost in dollars and cents (-1 to end): ");
             bill = bill + scan.nextDouble();
             System.out.print("Enter the item: ");
-            item = item.add(scan.nextLine());
+            item = (item + "\n" + (scan.nextLine()));
         }
 
         double total = bill * tipPercentage / 100 + bill;
