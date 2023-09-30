@@ -13,18 +13,15 @@ public class HongTipCalculator {
             int numPeople = scan.nextInt();
             System.out.print("What's the tip percentage? (0-100): ");
             int tipPercentage = scan.nextInt();
-            System.out.print("Enter a cost in dollars and cents (-1 to end): ");
-            double bill = scan.nextDouble();
-            scan.nextLine();
-            System.out.print("Enter the item: ");
-            String item = scan.nextLine();
-            double num = bill;
+            double bill = 0;
+            String item = "";
+            double num = 0;
             //inputs of all item and cost
             while (num != -1.0) {
                 System.out.print("Enter a cost in dollars and cents (-1 to end): ");
                 num = scan.nextDouble();
                 scan.nextLine();
-                bill = bill + num;
+                bill += num;
 
                 if (num != -1) {
                     System.out.print("Enter the item: ");
@@ -56,6 +53,7 @@ public class HongTipCalculator {
             //determines if code restarts
             System.out.print("Would you like to clear and restart? ");
             String restart = scan.nextLine();
+
             if (restart.equals("no")){
                 clear = false;
                 return;
