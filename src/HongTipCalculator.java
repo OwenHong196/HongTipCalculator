@@ -14,18 +14,18 @@ public class HongTipCalculator {
             System.out.print("What's the tip percentage? (0-100): ");
             int tipPercentage = scan.nextInt();
             double bill = 0;
-            String item = "";
-            double num = 0;
-            //inputs of all item and cost
-            while (num != -1.0) {
+            String itemList = "";
+            double cost = 0;
+            //inputs of all items and cost
+            while (cost != -1.0) {
                 System.out.print("Enter a cost in dollars and cents (-1 to end): ");
-                num = scan.nextDouble();
+                cost = scan.nextDouble();
                 scan.nextLine();
-                bill += num;
+                bill += cost;
 
-                if (num != -1) {
+                if (cost != -1.0) {
                     System.out.print("Enter the item: ");
-                    item = (item + "\n" + (scan.nextLine()));
+                    itemList += ("\n" + (scan.nextLine()));
                 }
             }
             bill++;
@@ -42,7 +42,7 @@ public class HongTipCalculator {
             System.out.println("Total cost per person: $" + String.format("%.2f", (total / numPeople)));
             System.out.println("-----------------------------");
             System.out.println("Items ordered: ");
-            System.out.print(item);
+            System.out.print(itemList);
             System.out.println();
             //special condition
             if (total >= 250) {
@@ -51,12 +51,11 @@ public class HongTipCalculator {
                 System.out.println(" [___] ");
             }
             //determines if code restarts
-            System.out.print("Would you like to clear and restart? ");
+            System.out.print("Would you like to clear and restart? (yes/no) ");
             String restart = scan.nextLine();
 
-            if (restart.equals("no")){
+            if (restart.equalsIgnoreCase("no")){
                 clear = false;
-                return;
             }
         }
         scan.close();
