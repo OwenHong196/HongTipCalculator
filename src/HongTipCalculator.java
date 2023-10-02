@@ -25,7 +25,7 @@ public class HongTipCalculator {
 
                 if (cost != -1.0) {
                     System.out.print("Enter the item: ");
-                    itemList += ("\n" + (scan.nextLine()));
+                    itemList += ((scan.nextLine()) + "\n");
                 }
             }
             bill++;
